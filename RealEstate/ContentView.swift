@@ -1,4 +1,6 @@
-
+/*
+    ContentView
+ */
 import SwiftUI
 
 struct ContentView: View {
@@ -28,19 +30,20 @@ struct ContentView: View {
         ]
         
         let phone = [
-            "415-338-1276",
-            "415-338-2176",
-            "415-338-1854",
-            "415-338-1830",
-            "415-338-1112"
+            "(415)338-1276",
+            "(415)338-2176",
+            "(415)338-1854",
+            "(415)338-1830",
+            "(415)338-1112"
         ]
         
         Text("SFSU Campus Real Estate")
             .padding()
+            .font(.callout)
         ZStack {
-            LinearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .center)
+            LinearGradient(colors: [.yellow, .purple], startPoint: .top, endPoint: .center)
             VStack {
-                ForEach (0..<photos.count) { index in
+                ForEach (0..<photos.count, id: \.self) { index in
                     HStack {
                         Image("\(photos[index])")
                             .resizable()
